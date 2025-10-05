@@ -285,7 +285,16 @@ namespace DeyeDataReader.Services
             }
             else if (hexAddress == "0x004F")
             {
-                _totalEnergyBought += value * 0.1 * 65536;
+                // For hybrid inverters with low total energy values, high word may contain invalid data
+                // Only add contribution if value is reasonable (< 10, representing < 655,360 kWh total)
+                if (value < 10)
+                {
+                    _totalEnergyBought += value * 0.1 * 65536;
+                }
+                else if (_config.Verbose)
+                {
+                    Console.WriteLine($"  DEBUG 0x004F: raw value = {value} ignored (likely invalid data for hybrid inverter)");
+                }
                 inverterData.TotalEnergyBought = _totalEnergyBought;
             }
             else if (hexAddress == "0x0051")
@@ -295,7 +304,15 @@ namespace DeyeDataReader.Services
             }
             else if (hexAddress == "0x0052")
             {
-                _totalEnergySold += value * 0.1 * 65536;
+                // For hybrid inverters with low total energy values, high word may contain invalid data
+                if (value < 10)
+                {
+                    _totalEnergySold += value * 0.1 * 65536;
+                }
+                else if (_config.Verbose)
+                {
+                    Console.WriteLine($"  DEBUG 0x0052: raw value = {value} ignored (likely invalid data for hybrid inverter)");
+                }
                 inverterData.TotalEnergySold = _totalEnergySold;
             }
             else if (hexAddress == "0x0060")
@@ -305,7 +322,15 @@ namespace DeyeDataReader.Services
             }
             else if (hexAddress == "0x0061")
             {
-                _totalProduction += value * 0.1 * 65536;
+                // For hybrid inverters with low total energy values, high word may contain invalid data
+                if (value < 10)
+                {
+                    _totalProduction += value * 0.1 * 65536;
+                }
+                else if (_config.Verbose)
+                {
+                    Console.WriteLine($"  DEBUG 0x0061: raw value = {value} ignored (likely invalid data for hybrid inverter)");
+                }
                 inverterData.TotalProduction = _totalProduction;
             }
             else
