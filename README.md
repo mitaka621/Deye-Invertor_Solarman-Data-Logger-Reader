@@ -7,7 +7,7 @@ A C# .NET 9.0 application for reading real-time data from Deye/Solarman hybrid i
 - Real-time data retrieval from Deye hybrid inverters (tested with SUN-8k-SG01LP1-EU)
 - Support for multiple register ranges
 - Configurable verbose logging
-- Returns structured data via `InverterDataDto` class
+- The `SolarmanDataLoggerService` returns the data, structured in the `InverterDataDto` class
 - Easy integration into custom C# applications
 - Supports battery, solar, grid, and BMS data
 
