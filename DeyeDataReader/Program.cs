@@ -16,10 +16,10 @@ namespace DeyeDataReader
             {
                 InverterIp = "10.98.128.77",
                 InverterPort = 8899,
+                Verbose = false,
                 InverterSerialNumber = 3119026917,
                 RegisterStarts = [0x0046, 0x00C1, 0x0100],
                 RegisterEnds = [0x00C0, 0x00CC, 0x013F],
-                Verbose = true,
             };
 
             var solarmanService = new SolarmanDataLoggerService(config);

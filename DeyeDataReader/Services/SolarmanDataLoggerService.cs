@@ -22,6 +22,12 @@ namespace DeyeDataReader.Services
             "0x00BE", "0x00BF", "0x005A", "0x005B", "0x00B6", "0x013E"
         };
 
+        public SolarmanDataLoggerService()
+        {
+            _config = new();
+            _registerMappings = LoadRegisterMappings();
+        }
+
         public SolarmanDataLoggerService(InverterConfig config)
         {
             _config = config;
