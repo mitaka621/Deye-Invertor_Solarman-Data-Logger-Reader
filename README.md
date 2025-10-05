@@ -64,6 +64,9 @@ The serial number of the **Solarman data logger** (not the inverter serial numbe
 4. Locate the "Logger Serial Number" field
 5. Copy the serial number (e.g., `3119026917`)
 
+<img width="2195" height="977" alt="image" src="https://github.com/user-attachments/assets/013e8849-15ad-432b-8dfe-06b8290a186a" />
+
+
 ```csharp
 InverterSerialNumber = 3119026917
 ```
@@ -142,6 +145,7 @@ The application will connect to the data logger, retrieve inverter data, and out
   ...
 }
 ```
+<img width="1653" height="1176" alt="image" src="https://github.com/user-attachments/assets/c589bc70-7997-4ad9-96fe-2f24a7f5b97e" />
 
 ## Available Data Points
 
