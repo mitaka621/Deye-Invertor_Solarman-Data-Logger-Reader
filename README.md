@@ -174,7 +174,7 @@ The following table lists all properties available in the `InverterDataDto` clas
 |                                     | TotalBatteryCharge        | Cumulative energy charged to battery                          | kWh  |
 |                                     | TotalBatteryDischarge     | Cumulative energy discharged from battery                     | kWh  |
 | **Grid**                            | GridVoltageL1             | Grid voltage phase L1                                         | V    |
-|                                     | GridVoltageL2             | Grid voltage phase L2                                         | V    |
+|                                     | GridVoltageL2             | Grid voltage phase L2 (for me this is 0 since its a single phase inverter)                                         | V    |
 |                                     | GridCurrentL1             | Grid current phase L1                                         | A    |
 |                                     | GridCurrentL2             | Grid current phase L2                                         | A    |
 |                                     | GridFrequency             | Grid frequency                                                | Hz   |
